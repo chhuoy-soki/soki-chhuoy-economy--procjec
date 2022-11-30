@@ -15,8 +15,8 @@
             <h4>ST-Shop</h4>
         </ul>
         <ul>
-            <li><a href="">Costomers</a> </li>
-            <li><a href="">Sellers</a> </li>
+            <li><a href="index.html">Costomers</a> </li>
+            <li><a href="seller/seller.html">Sellers</a> </li>
         </ul>
     </nav>
     <div class="input-text">
@@ -24,48 +24,26 @@
         <input type="text" placeholder="Search">
     </div>
     <div class="card">
-        <div class="card-btn">
-            <div class="image">
-                <img src="image/dress-2.jpg" alt="">
-            </div>
-            <p>Dress Free size</p>
-            <p>35$</p>
-            <div class="button">
-                <button>Buy Now</button>
-            </div>
-        </div>
-        <div class="card-btn">
-            <div class="image">
-                <img src="image/dress-2.jpg" alt="">
-            </div>
-            <p>Dress Free size</p>
-            <p>35$</p>
-            <div class="button">
-                <button>Buy Now</button>
-            </div>
-        </div>
-        <div class="card-btn">
-            <div class="image">
-                <img src="image/dress-2.jpg" alt="">
-            </div>
-            <p>Dress Free size</p>
-            <p>35$</p>
-            <div class="button">
-                <button>Buy Now</button>
-            </div>
-        </div>
-        <div class="card-btn">
-            <div class="image">
-                <img src="image/dress-2.jpg" alt="">
-            </div>
-            <p>Dress Free size</p>
-            <p>35$</p>
-            <div class="button">
-                <button>Buy Now</button>
-            </div>
-        </div>
-        
+        <!-- <div class="card-btn"> -->
     </div>
+    <div id="questions-dialog" style="display: none">
+        <dialog open>
+          <header>Create new question</header>
+          <section>
+            <label>Add a delivery and collection main address</label>
+            <input id="choice_image" type="text" placeholder="FullName" />
+            <input id="choice_product" type="text" placeholder="Name product" />
+            <input id="choice_price" type="text" placeholder="price" />
+            <input id="choice_price" type="text" placeholder="address" />
+          </section>
+          <menu>
+            <!-- When clicking on button,  call the right function  -->
+            <button onclick="onCancel()">Cancel</button>
+  
+            <!-- When clicking on button,  call the right function  -->
+            <button onclick="createProduct()">Create</button>
+          </menu>
+        </dialog>
 </body>
 <script src="js/main.js"></script>
 </html>
