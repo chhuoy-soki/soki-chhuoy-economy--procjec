@@ -1,7 +1,17 @@
 const table = document.querySelector("#table-container");
 const questions_dialog = document.querySelector("#questions-dialog")
+const create = document.querySelector("#create-product")
+const cacel = document.querySelector("#cancal-product")
+
 let products =[
-    
+    {image:"../../image/dress-3.jpg",product:"Dress for girl free size",price: 45},
+    {image:"../../image/dress-2.jpg",product:"Dress for girl free size",price: 45},
+    {image:"../../image/dress-5.jpg",product:"Dress for girl free size",price: 45},
+    {image:"../../image/dress.jpg",product:"Dress for girl free size",price: 45},
+    {image:"../../image/dress4.jpg",product:"Dress for girl free size",price: 45},
+    {image:"../../image/T-shirt-2.jpg",product:"Dress for girl free size",price: 45},
+    {image:"../../image/T-shirt-4webp",product:"Dress for girl free size",price: 45},
+    {image:"../../image/dress.jpg",product:"Dress for girl free size",price: 45},
 ]
 
 
@@ -17,6 +27,7 @@ function onAddButton(){
 }
 
 function savePorduct() {
+    //set data in localstorage
     localStorage.setItem("products",JSON.stringify(products))
 }
 
@@ -29,6 +40,9 @@ function loadProduct(){
         localStorage.removeItem("products")
     }
 }
+
+
+
 function renderProduct(){
     loadProduct()
     let table_title = document.querySelector("#tbody");
@@ -46,8 +60,6 @@ function renderProduct(){
         
         let td1 = document.createElement("td");
         td1.setAttribute("id","image");
-        // td1.textContent = products[index].image
-        // td1.dataset = index
         
         let image = document.createElement("img");
         image.src = products[index].image
@@ -76,6 +88,7 @@ function renderProduct(){
         let edit = document.createElement("button");
         edit.setAttribute("id","edit");
         edit.textContent = "edit";
+        edit.addEventListener("click",onEdit)
         
         let div = document.createElement("div");
         div.setAttribute("id","btn")
@@ -88,14 +101,53 @@ function renderProduct(){
         tr.appendChild(td3)
         tr.appendChild(td4)   
         table_title.appendChild(tr)
-        console.log(tr)
     }
+}
+
+
+let index = 0
+function onEdit(event){
+    //edit information in product
+
+    show(questions_dialog)
+    document.querySelector("menu").lastElementChild.textContent = "Edit"
+
+    index = event.target.parentElement.parentElement.parentElement.dataset.index;
+    
+    document.querySelector("#choice_image").value = products[index].image;
+    document.querySelector("#choice_product").value = products[index].product;
+    document.querySelector("#choice_price").value = products[index].price;
     
 }
 
-function createProduct(){
+function add(){
+    clearData()
+    show(questions_dialog)
+    index = null
+}
+
+function editProduct(){
+
     hide(questions_dialog)
 
+    if (products !== null){  /// if don't have value
+        document.querySelector("#choice_image").value = products[index].image;
+        document.querySelector("#choice_product").value = products[index].product;
+        document.querySelector("#choice_price").value = products[index].price;
+    }else{
+        //if have value
+        let newProduct = {}
+        newProduct.image = document.querySelector("#choice_image").value;
+        newProduct.product = document.querySelector("#choice_product").value;
+        newProduct.price = document.querySelector("#choice_price").value;
+        products.push(newProduct)
+    }
+}
+
+function createProduct(){
+    hide(questions_dialog)  //hide form input
+
+    // create new product
     let newProduct = {}
     newProduct.image = document.querySelector("#choice_image").value;
     newProduct.product = document.querySelector("#choice_product").value;
@@ -103,24 +155,33 @@ function createProduct(){
     products.push(newProduct)
     savePorduct()
     renderProduct()
-    
-
 }
 
+
+
 function onDelete(event){
+    // remove product
+
     let index = event.target.parentElement.parentElement.parentElement.dataset.index;
     console.log(products)
     products.splice(index, 1);
-    // console.log(products)
     savePorduct()
     renderProduct()
 
 }
 
+function clearData(){
+    //clear value in input
+    document.querySelector("#choice_image").value = ""
+    document.querySelector("#choice_product").value = ""
+    document.querySelector("#choice_price").value = ""
+}
+
 function onCancel(){
     hide(questions_dialog)
 }
+
 renderProduct()
 loadProduct()
-// savePorduct()
-// questions_dialog.addEventListener("click",show)
+savePorduct()
+

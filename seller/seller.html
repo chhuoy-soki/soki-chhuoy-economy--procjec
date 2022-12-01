@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Procject</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -36,7 +36,7 @@
     </table>
       <div id="questions-dialog" style="display: none">
         <dialog open>
-          <header>Create new question</header>
+          <header>Create new Product</header>
           <section>
             <label>New Product</label>
             <input id="choice_image" type="text" placeholder="image" />
@@ -45,10 +45,12 @@
           </section>
           <menu>
             <!-- When clicking on button,  call the right function  -->
-            <button onclick="onCancel()">Cancel</button>
+            <button onclick="onCancel()" id="cancal-product">Cancel</button>
   
             <!-- When clicking on button,  call the right function  -->
-            <button onclick="createProduct()">Create</button>
+            <button onclick="createProduct()" id="create-product">Create</button>
+
+            <!-- <button id="edit-product">Edit</button> -->
           </menu>
         </dialog>
       </div>

@@ -1,20 +1,21 @@
 const questions_dialog = document.querySelector("#questions-dialog")
 
-const products  = [
-    {name: 'Dress for women Reasonable price​​​ ​free size',image: 'image/dress-3.jpg',price: 35,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​​',image: 'image/dress.jpg',price: 40,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'image/dress4.jpg',price: 45,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'image/dress-2.jpg',price: 30,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'image/dress-3.jpg',price: 30,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'image/dress4.jpg',price: 30,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'image/dress-2.jpg',price: 30,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'image/dress-2.jpg',price: 30,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'image/T-shirt-2.jpg',price: 30,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'image/T-shirt-3jfif',price: 30,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'image/T-shirt-4.webp',price: 30,rate: 4},
-    {name: 'Dress for women​​ Reasonable price​ ​free size​',image: 'T-shirt-5.jfif',price: 30,rate: 4},
-]
+let products  = []
 
+
+function savePorduct() {
+    localStorage.setItem("products",JSON.stringify(products))
+}
+
+function loadProduct(){
+    const productsStorage = JSON.parse(localStorage.getItem("products"));
+    if (productsStorage.length > 0){
+      products = productsStorage
+    }
+    else{
+        localStorage.removeItem("products")
+    }
+}
 
 function showButton(element){
     element.style.display =  "block"
@@ -48,7 +49,8 @@ function displayProducts() {
         img.appendChild(image)
 
         let p1 = document.createElement("p");
-        p1.textContent = product.name
+        p1.setAttribute("class","list")
+        p1.textContent = product.product
         img.appendChild(p1);
 
         let p2 = document.createElement("p");
@@ -62,15 +64,29 @@ function displayProducts() {
         let button = document.createElement("button");
         button.textContent = "Buy now";
         button.addEventListener("click",onAddButton)
-        console.log(button)
+        // console.log(button)
 
         div_image.appendChild(button)
         card.appendChild(img)
         card.appendChild(div_image)
         container.appendChild(card)
-        console.log(container)
+        // console.log(container)
+
+
     }
 }
 
+function serch_product(){
+    // let text = document.querySelector(".list").parentElement.parentElement.parentElement = products
+    // console.log(text)
+    for (let product of products) {
+        console.log(product)
+    }
+}
 
+// serch_product()
+
+
+loadProduct()
+savePorduct()
 displayProducts()
