@@ -7,6 +7,7 @@
     <title>Procject</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <nav>
@@ -21,19 +22,22 @@
     </nav>
     <div class="input-text">
         <i class="material-icons">youtube_searched</i>
-        <input type="text" placeholder="Search" oninput="serch_product()" >
+        <input id="search" type="text" placeholder="Search" oninput="serch_product()" >
     </div>
     <div class="card">
         <!-- <div class="card-btn"> -->
     </div>
     <div id="questions-dialog" style="display: none">
         <dialog open>
-          <header>Create new question</header>
+          <header>Add a delivery and collection main address</header>
           <section>
-            <label>Add a delivery and collection main address</label>
-            <input id="choice_image" type="text" placeholder="FullName" />
+              <label>Full Name</label>
+              <input id="choice_image" type="text" placeholder="FullName" />
+            <label>Name Product</label>
             <input id="choice_product" type="text" placeholder="Name product" />
+            <label>Price</label>
             <input id="choice_price" type="text" placeholder="price" />
+            <label>Your Address</label>
             <input id="choice_price" type="text" placeholder="address" />
           </section>
           <menu>
@@ -44,6 +48,43 @@
             <button onclick="createProduct()">Create</button>
           </menu>
         </dialog>
+    </div>
+    <div class="foo">
+        <footer>
+            <h1>ONLINE SHOP</h1> 
+        <div class="footer1">
+            <h2>About us</h2>
+            <p>About ONLINE SHOP</p>
+            <p>About ONLINE GROUP</p>
+        </div>
+        <div class="footer2">
+            <h2>Customer services</h2>
+            <p>Help Center</p>
+            <p>Report abuse</p>
+            <p>Open a case</p>
+        </div>
+        <div class="footer3">
+            <h2>Source on ONLINE.com</h2>
+            <p>Resources</p>
+            <p>All categoriees</p>
+            <p>Request for ship</p>
+        </div>
+        <div class="footer4">
+            <h2>Sell on ONLINE SHOP.com</h2>
+            <p>Supplier memberships</p>
+            <p>learning Center</p>
+            <p>Parter program</p>
+        </div>
+        </footer>
+        <div class="contect">
+            <h1>Contect us</h1>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram "></a>
+            <a href="#" class="fa fa-skype "></a>
+        </div>
+    </div>
 </body>
 <script src="js/main.js"></script>
 </html>
