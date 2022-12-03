@@ -17,36 +17,24 @@
         </ul>
         <ul>
             <li><a href="index.html">Costomers</a> </li>
-            <li><a href="seller/seller.html">Sellers</a> </li>
+            <!-- <li><a href="seller/seller.html">Sellers</a> </li> -->
+            <li> <i class="material-icons">settings_phone</i></li>
+            <li> <i class="material-icons">shopping_cart</i></li>
         </ul>
     </nav>
     <div class="input-text">
         <i class="material-icons">youtube_searched</i>
-        <input id="search" type="text" placeholder="Search" oninput="serch_product()" >
+        <input id="search" type="text" placeholder="Search"  >
     </div>
     <div class="card">
         <!-- <div class="card-btn"> -->
     </div>
     <div id="questions-dialog" style="display: none">
-        <dialog open>
+        <dialog id="dialog" open>
           <header>Add a delivery and collection main address</header>
-          <section>
-              <label>Full Name</label>
-              <input id="choice_image" type="text" placeholder="FullName" />
-            <label>Name Product</label>
-            <input id="choice_product" type="text" placeholder="Name product" />
-            <label>Price</label>
-            <input id="choice_price" type="text" placeholder="price" />
-            <label>Your Address</label>
-            <input id="choice_price" type="text" placeholder="address" />
-          </section>
-          <menu>
-            <!-- When clicking on button,  call the right function  -->
-            <button onclick="onCancel()">Cancel</button>
-  
-            <!-- When clicking on button,  call the right function  -->
-            <button onclick="createProduct()">Create</button>
-          </menu>
+          <div class="detall">
+            
+          </div>
         </dialog>
     </div>
     <div class="foo">
