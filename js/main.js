@@ -68,20 +68,19 @@ function displayProducts(arr) {
         let icon = document.createElement("div");
         icon.className = "icon";
 
-        let icon1 = document.createElement("i");
-        icon1.className = "material-icons"
-        icon1.textContent = "shopping_cart";
-        icon.appendChild(icon1)
+        let star = 5
+        for(let i = 0; i < star; i++) {
+            let i = document.createElement("i");
+            i.className = "fa fa-star";
+            i.setAttribute("style", "color: orange; font-size:25px");
+            icon.appendChild(i)
+        }
         
         //creat button
         let div_image = document.createElement("div");
         div_image.setAttribute("id","button");
         let button = document.createElement("button");
-        button.textContent = "Buy now";
-
-        let link_detall = document.createElement("a");
-        link_detall.href = "../detall/index.html"
-        link_detall.appendChild(button)
+        button.textContent = "Detall";
         button.addEventListener("click",detallProduct)
         button.dataset.index = index
         // console.log(button)
@@ -90,6 +89,7 @@ function displayProducts(arr) {
         //append element in div_image
         div_image.appendChild(button)
         card.appendChild(img)
+        card.appendChild(icon)
         card.appendChild(div_image)
         container.appendChild(card)
     }
@@ -150,6 +150,19 @@ function detallProduct(event){
         image.src = product.image
         div2.appendChild(image)
 
+        let icon = document.createElement("div");
+        icon.className = "icon";
+
+        let star = 5
+        for(let i = 0; i < star; i++) {
+            let i = document.createElement("i");
+            i.className = "fa fa-star";
+            i.setAttribute("style", "color: orange; font-size:35px");
+            icon.appendChild(i)
+        }
+        div2.appendChild(icon)
+        
+
         //create div and append element in div
         let div3 = document.createElement("div");
         div3.className = "detall-item-name";
@@ -197,14 +210,22 @@ function detallProduct(event){
         input2.type = "nunber";
         input2.placeholder ="order";
 
+        let label4 = document.createElement("label");
+        label4.textContent = "Your phone number";
+        let input3 = document.createElement("input");
+        input3.type = "nunber";
+        input3.placeholder ="phone number or email";
+
         let p3 = document.createElement("p");
-        p3.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse voluptate doloribus atque suscipit! Iure,porro, omnis obcaecati doloribus provident totam ex officiis accusamus vel,";
+        p3.textContent = "For online sellers, the t-shirt market is also a popular stomping ground. In 2021, the global custom t-shirt printing market was valued at $3.9 billion—and by 2030, it's expected to be worth $9.18 billion";
 
         div3.appendChild(label1);
         div3.appendChild(input1);
 
         div3.appendChild(label2);
         div3.appendChild(input2);
+        div3.appendChild(label4);
+        div3.appendChild(input3);
 
         div3.appendChild(p3);
         
@@ -213,7 +234,7 @@ function detallProduct(event){
         let div4 = document.createElement("div");
         div4.className = "item-button";
         let button1 = document.createElement("button");
-        button1.textContent = "save";
+        button1.textContent = "Buy now";
         button1.addEventListener("click",onCancel)
 
         let button2 = document.createElement("button");
@@ -238,7 +259,6 @@ function detallProduct(event){
 
 let getSearch = document.querySelector(".input-text").querySelector("input");   //input
 getSearch.addEventListener("keyup",researchProduct)  // keyup event to alert text search
-
 
 
 researchProduct();

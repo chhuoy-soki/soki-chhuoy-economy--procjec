@@ -86,7 +86,6 @@ function renderProduct(){
         let td4 = document.createElement("td");
         td4.setAttribute("id","action")
         
-      
         
         let create = document.createElement("button");
         create.setAttribute("id","delete");
@@ -118,7 +117,6 @@ let productIndex = null;
 function createProduct(event){
     event.preventDefault()
     // hide(questions_dialog)  //hide form input
-
     if (document.querySelector("#choice_image").value != "" && document.querySelector("#choice_product").value !="" && document.querySelector("#choice_price").value != ""){
 
         if (productIndex !== null){
@@ -134,7 +132,7 @@ function createProduct(event){
             newProduct.image = document.querySelector("#choice_image").value;
             newProduct.name = document.querySelector("#choice_product").value;
             newProduct.price = document.querySelector("#choice_price").value;
-            products.push(newProduct) 
+            products.unshift(newProduct) 
         }
         hide(questions_dialog)
         StorageProduct()
@@ -144,7 +142,6 @@ function createProduct(event){
         alert("You must input a product")
     }
 }
-
 
 function onEdit(event){
     //edit information in product
@@ -161,8 +158,6 @@ function onEdit(event){
     create.textContent = "save"
     header.textContent = "edit product"
 
-    console.log(create)
-
 }
 
 function onDelete(event){
@@ -176,7 +171,6 @@ function onDelete(event){
     renderProduct()
 
 }
-
 
 function onCancel(event){
     event.preventDefault()

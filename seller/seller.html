@@ -36,24 +36,27 @@
     </table>
       <div id="questions-dialog" style="display: none">
         <dialog open>
-          <header>Create new Product</header>
+          <header id="edit-header">Create new Product</header>
           <section>
-            <label>New Product</label>
+            <label>Image Product</label>
             <input id="choice_image" type="text" placeholder="image" />
+            <label>Nmae Product</label>
             <input id="choice_product" type="text" placeholder="product" />
-            <input id="choice_price" type="text" placeholder="price" />
+            <label>Price Product</label>
+            <input id="choice_price" type="number" placeholder="price" />
           </section>
           <menu>
             <!-- When clicking on button,  call the right function  -->
-            <button onclick="onCancel()" id="cancal-product">Cancel</button>
+            <button onclick="onCancel(event)" id="cancal-product">Cancel</button>
   
             <!-- When clicking on button,  call the right function  -->
-            <button onclick="createProduct()" id="create-product">Create</button>
+            <button onclick="createProduct(event)" id="create-product">Create</button>
 
             <!-- <button id="edit-product">Edit</button> -->
           </menu>
         </dialog>
       </div>
+      
 </body>
 <script src="js/script.js"></script>
 </html>
