@@ -41,7 +41,7 @@ ul li a {
     color: rgb(0, 0, 0);
 }
 ul li:hover {
-    background-color: var(--main-color-light);
+    background-color: orange;
     border: none;
 }
 nav img {
@@ -81,6 +81,13 @@ nav img {
     justify-content: space-around;
     gap: 10px;
 }
+.card-btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    -ms-transform: scale(1.03); /* IE 9 */
+    -webkit-transform: scale(1.03); /* Safari 3-8 */
+    transform: scale(1.03); 
+  
+}
 .card-btn{
     background: white;
     display: flex;
@@ -93,8 +100,8 @@ nav img {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;   
 }
 .image img{
-    width: 200px;
-    height: 150px;
+    width: 190px;
+    height: 200px;
     margin-top: 20px;
 }
 #button {
@@ -163,6 +170,7 @@ nav img {
 /* //////////style dialog */
 
 dialog {
+    height: 65vh;
     position: fixed;
     top: 10vh;
     left: 20%;
@@ -228,22 +236,30 @@ menu button{
 #action{
     display: flex;
     width: 80%;
-    justify-content: flex-end;
+    justify-content: center;
     border: none;
+}
+#btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    
 }
 #edit{
     background: blue;
     border: none;
-    width: 50%;
+    width: 70%;
     border-radius: 5px;
     color: white;
-    padding: 15px;
+    padding: 10px;
 }
 #delete{
     background: red;
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
-    width: 50%;
+    width: 70%;
     color: white;
     border: none;
 }
@@ -310,4 +326,59 @@ footer{
     background: rgb(47, 46, 46);
     color: white;
 
+}
+#name-image{
+    width: 100px;
+    height: 100px;
+}
+
+/* .detall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+} */
+.detall-item{
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+    
+}
+
+.item-name{
+    display: flex;
+}
+#image-detall{
+    width: 290px;
+    height: 300px;
+}
+.item-button{
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    /* align-items: center; */
+}
+.item-button button{
+    padding: 10px;
+    background: rgb(55, 55, 235);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 10%;
+}
+
+#dialog{
+    height: 85vh;
+    position: fixed;
+    top: 10vh;
+    left: 20%;
+    width: 60%;
+    z-index: 100;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
 }
