@@ -117,6 +117,8 @@ function researchProduct(){
         
     }
 }
+let getSearch = document.querySelector(".input-text").querySelector("input");   //input
+getSearch.addEventListener("keyup",researchProduct)  // keyup event to alert text search
 
 
 let products_detall = []
@@ -257,8 +259,7 @@ function detallProduct(event){
    
 }
 
-let getSearch = document.querySelector(".input-text").querySelector("input");   //input
-getSearch.addEventListener("keyup",researchProduct)  // keyup event to alert text search
+
 
 
 researchProduct();
